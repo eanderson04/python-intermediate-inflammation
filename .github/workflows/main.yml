@@ -41,5 +41,8 @@ jobs:
         run: |
           pytest --cov=inflammation.models tests/test_models.py
 
-
+      # Linter
+      - name: Check style with PyLint
+        run: |
+         python3 -m pylint --fail-under=0 --reprots=y inflammation
     
