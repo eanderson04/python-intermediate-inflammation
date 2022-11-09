@@ -77,3 +77,9 @@ def test_patient_normalise(test, expected, expect_raises):
     else:
         npt.assert_almost_equal(patient_normalise(np.array(test)), np.array(expected), decimal=2)
 
+def test_daily_min_string():
+    '''Test for TypeError when we pass a string'''
+    from inflammation.models import daily_min
+
+    with pytest.raises(TypeError):
+        error_expected = daily_min([['abd', 'ads'], ['asd', 'auhs']])
